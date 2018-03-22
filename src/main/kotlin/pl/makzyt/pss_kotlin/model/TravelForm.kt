@@ -7,13 +7,13 @@ import javax.validation.constraints.NotNull
 
 class TravelForm {
 
-    @PresentOrFuture(message = "Data musi być określona od dziś włącznie.")
+    @NotNull(message = "{validation.enterData}")
+    @PresentOrFuture(message = "{validation.futureDate}")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @NotNull(message = "Proszę podać dane.")
     var departureDate: Date? = null
 
-    @PresentOrFuture(message = "Data musi być określona od dziś włącznie.")
+    @NotNull(message = "{validation.enterData}")
+    @PresentOrFuture(message = "{validation.futureDate}")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @NotNull(message = "Proszę podać dane.")
     var returnDate: Date? = null
 }
