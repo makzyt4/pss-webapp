@@ -18,7 +18,7 @@ open class GreetingController {
 
     @InitBinder
     fun bindingPreparation(binder: WebDataBinder) {
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd")
+        val dateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm")
         val orderDateEditor: CustomDateEditor = CustomDateEditor(dateFormat, true)
         binder.registerCustomEditor(Date::class.java, orderDateEditor)
     }
