@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult
 import org.springframework.web.bind.WebDataBinder
 import org.springframework.web.bind.annotation.*
 import pl.makzyt.pss_kotlin.model.TravelForm
+import pl.makzyt.pss_kotlin.model.TravelResult
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.validation.Valid
@@ -29,10 +30,12 @@ open class GreetingController {
     }
 
     @PostMapping("/form")
-    fun results(@Valid @ModelAttribute("form") form: TravelForm, result: BindingResult): String {
+    fun results(@Valid @ModelAttribute("form") form: TravelForm, result: BindingResult, model: Model): String {
         if (result.hasErrors()) {
             return "travelform"
         }
+
+        model.addAttribute("result", TravelResult(form))
 
         return "results"
     }
