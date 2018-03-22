@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Wyniki</title>
+    <title>Kalkulator krajowej podróży służbowej</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="/css/style.css">
@@ -15,12 +15,18 @@
 </div>
 
 <div class="container container-small">
-    <form>
+    <form th:action="@{/travel/form}" th:object="${form}" method="post">
         <div class="form-group row">
-            <label for="input-departuredate" class="col-sm2 col-form-label">Data i godzina wyjazdu</label>
-            <div class="col-sm-5">
-                <input type="date" class="form-control" id="input-departuredate">
+            <label class="col-sm2 col-form-label">Data i godzina wyjazdu</label>
+            <div class="col-sm">
+                <input type="date" class="form-control" th:field="*{departureDate}"/>
             </div>
+            <span class="col error" th:if="${#fields.hasErrors('departureDate')}" th:errors="*{departureDate}">Error
+            </span>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="submit" class="btn btn-primary">Oblicz</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
         </div>
     </form>
 </div>
