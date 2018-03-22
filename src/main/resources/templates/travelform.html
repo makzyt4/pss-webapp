@@ -21,9 +21,10 @@
             <div class="col-sm">
                 <input type="date" class="form-control" th:field="*{departureDate}"/>
             </div>
-            <span class="col error" th:if="${#fields.hasErrors('departureDate')}" th:errors="*{departureDate}">Error
-            </span>
+            <div class="col error col-form-label" th:if="${#fields.hasErrors('departureDate')}" th:errors="*{departureDate}">Error
+            </div>
         </div>
+        <hr>
         <div class="btn-group" role="group">
             <button type="submit" class="btn btn-primary">Oblicz</button>
             <button type="reset" class="btn btn-secondary">Reset</button>

@@ -1,3 +1,14 @@
 body {
     font-family: Helvetica, Roboto, Arial, sans;
 }
+
+.error {
+    color: red;
+    font-style: italic;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 700px;
+  }
+}
