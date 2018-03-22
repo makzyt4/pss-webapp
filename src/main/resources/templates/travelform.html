@@ -7,12 +7,6 @@
 <body>
 <div layout:fragment="content">
 
-    <div class="jumbotron text-center">
-        <h1>Kalkulator krajowej podróży służbowej</h1>
-        <p>Kalkulator krajowej podróży służbowej oblicza wartość kosztów delegacji pracownika w oparciu o czas trwania
-            wyjazdu oraz informacje o poniesionych wydatkach.</p>
-    </div>
-
     <div class="container container-small">
         <form th:action="@{/travel/form}" th:object="${form}" method="post">
             <div class="form-group row">
