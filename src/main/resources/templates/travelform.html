@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Wyniki</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="/css/style.css">
+    <script th:src="@{/js/bootstrap.bundle.js}" src="/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+<div class="jumbotron text-center">
+    <h1>Kalkulator krajowej podróży służbowej</h1>
+    <p>Kalkulator krajowej podróży służbowej oblicza wartość kosztów delegacji pracownika w oparciu o czas trwania
+        wyjazdu oraz informacje o poniesionych wydatkach.</p>
+</div>
+
+<div class="container container-small">
+    <form>
+        <div class="form-group row">
+            <label for="input-departuredate" class="col-sm2 col-form-label">Data i godzina wyjazdu</label>
+            <div class="col-sm-5">
+                <input type="date" class="form-control" id="input-departuredate">
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

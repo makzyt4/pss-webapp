@@ -7,7 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping
 open class GreetingController {
 
     @GetMapping("/travel/results")
-    fun form(): String {
+    fun results(): String {
         return "results"
+    }
+
+    @GetMapping("/travel/form")
+    fun form(): String {
+        return "travelform"
     }
 }
