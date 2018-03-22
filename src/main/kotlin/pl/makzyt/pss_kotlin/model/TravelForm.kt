@@ -11,11 +11,11 @@ class TravelForm {
 
     @NotNull(message = "{validation.emptyData}")
     @PresentOrFuture(message = "{validation.futureDate}")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm")
     var departureDate: Date? = null
 
     @NotNull(message = "{validation.emptyData}")
     @PresentOrFuture(message = "{validation.futureDate}")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm")
     var returnDate: Date? = null
 }
