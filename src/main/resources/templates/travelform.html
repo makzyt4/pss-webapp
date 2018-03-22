@@ -1,45 +1,45 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default}">
 <head>
     <title>Kalkulator krajowej podróży służbowej</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}" href="/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" href="/css/style.css">
-    <script th:src="@{/js/bootstrap.bundle.js}" src="/js/bootstrap.bundle.js"></script>
 </head>
 <body>
-<div class="jumbotron text-center">
-    <h1>Kalkulator krajowej podróży służbowej</h1>
-    <p>Kalkulator krajowej podróży służbowej oblicza wartość kosztów delegacji pracownika w oparciu o czas trwania
-        wyjazdu oraz informacje o poniesionych wydatkach.</p>
-</div>
+<div layout:fragment="content">
 
-<div class="container container-small">
-    <form th:action="@{/travel/form}" th:object="${form}" method="post">
-        <div class="form-group row">
-            <label class="col-sm2 col-form-label">Data i godzina wyjazdu</label>
-            <div class="col-sm">
-                <input type="date" class="form-control" th:field="*{departureDate}"/>
+    <div class="jumbotron text-center">
+        <h1>Kalkulator krajowej podróży służbowej</h1>
+        <p>Kalkulator krajowej podróży służbowej oblicza wartość kosztów delegacji pracownika w oparciu o czas trwania
+            wyjazdu oraz informacje o poniesionych wydatkach.</p>
+    </div>
+
+    <div class="container container-small">
+        <form th:action="@{/travel/form}" th:object="${form}" method="post">
+            <div class="form-group row">
+                <label class="col-sm2 col-form-label">Data i godzina wyjazdu</label>
+                <div class="col-sm">
+                    <input type="date" class="form-control" th:field="*{departureDate}"/>
+                </div>
+                <div class="col error col-form-label" th:if="${#fields.hasErrors('departureDate')}"
+                     th:errors="*{departureDate}">Error
+                </div>
             </div>
-            <div class="col error col-form-label" th:if="${#fields.hasErrors('departureDate')}"
-                 th:errors="*{departureDate}">Error
+            <div class="form-group row">
+                <label class="col-sm2 col-form-label">Data i godzina powrotu</label>
+                <div class="col-sm">
+                    <input type="date" class="form-control" th:field="*{returnDate}"/>
+                </div>
+                <div class="col error col-form-label" th:if="${#fields.hasErrors('returnDate')}"
+                     th:errors="*{returnDate}">Error
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm2 col-form-label">Data i godzina powrotu</label>
-            <div class="col-sm">
-                <input type="date" class="form-control" th:field="*{returnDate}"/>
+            <hr>
+            <div class="btn-group" role="group">
+                <button type="submit" class="btn btn-primary">Oblicz</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
             </div>
-            <div class="col error col-form-label" th:if="${#fields.hasErrors('returnDate')}"
-                 th:errors="*{returnDate}">Error
-            </div>
-        </div>
-        <hr>
-        <div class="btn-group" role="group">
-            <button type="submit" class="btn btn-primary">Oblicz</button>
-            <button type="reset" class="btn btn-secondary">Reset</button>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 </body>
 </html>

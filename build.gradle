@@ -53,6 +53,10 @@ dependencies {
     compile group: 'org.springframework.boot',
             name: 'spring-boot-starter-thymeleaf',
             version: '2.0.0.RELEASE'
+
+    compile group: 'nz.net.ultraq.thymeleaf',
+            name: 'thymeleaf-layout-dialect',
+            version: '2.3.0'
 }
 
 compileKotlin {
