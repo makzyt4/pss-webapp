@@ -7,6 +7,7 @@ import javax.validation.constraints.Min
 import javax.validation.constraints.NotNull
 
 class TravelForm {
+
     @NotNull(message = "Proszę podać datę wyjazdu.")
     var departureDate: Date? = null
 
