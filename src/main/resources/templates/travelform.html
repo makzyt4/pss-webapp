@@ -33,8 +33,8 @@
                      th:errors="*{returnDate}">Error
                 </div>
             </div>
-            <hr>
             <p class="text-danger" th:if="${#fields.hasErrors('${form}')}" th:errors="${form}">Error</p>
+            <hr>
             <div class="btn-group" role="group">
                 <button type="submit" class="btn btn-primary">Oblicz</button>
                 <button type="reset" class="btn btn-secondary">Reset</button>
