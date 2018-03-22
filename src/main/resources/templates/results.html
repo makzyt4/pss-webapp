@@ -19,7 +19,11 @@
         <th colspan="2">Dieta</th>
         <tr>
             <td>Data i godzina wyjazdu:</td>
-            <td th:text="${result.depDate}"></td>
+            <td class="text-right" th:text="${result.depDate}"></td>
+        </tr>
+        <tr>
+            <td>Data i godzina powrotu:</td>
+            <td class="text-right" th:text="${result.retDate}"></td>
         </tr>
         </tbody>
     </table>

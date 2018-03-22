@@ -4,4 +4,5 @@ import java.text.SimpleDateFormat
 
 class TravelResult(form: TravelForm) {
     val depDate = SimpleDateFormat("dd.MM.yyyy").format(form.departureDate)
+    val retDate = SimpleDateFormat("dd.MM.yyyy").format(form.returnDate)
 }
