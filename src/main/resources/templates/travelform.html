@@ -27,6 +27,14 @@
                     </div>
                 </div>
             </div>
+
+            <small class="form-text text-danger" th:if="${#fields.hasErrors('${form}')}" th:errors="${form}" ></small>
+            <hr>
+
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary">Oblicz</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
         </form>
     </div>
 </div>
