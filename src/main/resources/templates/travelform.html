@@ -7,68 +7,6 @@
 <body>
 <div layout:fragment="content">
 
-    <div class="container container-small">
-        <form th:action="@{/travel/form}" th:object="${form}" method="post">
-
-            <div class="form-group row">
-                <div class="container">
-                    <div class="row">
-                        <div class='col-sm-6'>
-                            <div class="form-group row">
-                                <label for="datetimepicker1" class="col-sm2 col-form-label">Data i godzina
-                                    wyjazdu</label>
-                                <div class='input-group date' id='datetimepicker1'>
-                                    <input type='text' class="form-control" th:field="*{departureDate}"/>
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col text-danger col-form-label" th:if="${#fields.hasErrors('departureDate')}"
-                     th:errors="*{departureDate}">Error
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <div class="container">
-                    <div class="row">
-                        <div class='col-sm-6'>
-                            <div class="form-group row">
-                                <label for="datetimepicker2" class="col-sm2 col-form-label">Data i godzina
-                                    powrotu</label>
-                                <div class='input-group date' id='datetimepicker2'>
-                                    <input type='text' class="form-control" th:field="*{returnDate}"/>
-                                    <span class="input-group-addon">
-                                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col text-danger col-form-label" th:if="${#fields.hasErrors('returnDate')}"
-                     th:errors="*{returnDate}">Error
-                </div>
-            </div>
-
-            <p class="text-danger" th:if="${#fields.hasErrors('${form}')}" th:errors="${form}">Error</p>
-            <hr>
-            <div class="btn-group" role="group">
-                <button type="submit" class="btn btn-primary">Oblicz</button>
-                <button type="reset" class="btn btn-secondary">Reset</button>
-            </div>
-        </form>
-    </div>
-
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker({format: 'DD.MM.Y HH:mm'});
-            $('#datetimepicker2').datetimepicker({format: 'DD.MM.Y HH:mm'});
-        });
-    </script>
 </div>
 </body>
 </html>
