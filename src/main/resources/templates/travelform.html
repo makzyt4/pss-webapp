@@ -5,7 +5,7 @@
     <title>Kalkulator krajowej podróży służbowej</title>
     <script>
         $(document).ready(function() {
-            $('#input1').datetimepicker(locale: 'pl');
+            $('#input1').datetimepicker();
         });
     </script>
 </head>
@@ -16,6 +16,7 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group mb-5">
+                        <label class="form-label">Data i godzina wyjazdu</label>
                         <div class="input-group date" id="input1" data-target-input="nearest">
                             <input type="text" class="form-control datetimepicker-input" data-target="#input1"/>
                             <div class="input-group-append" data-target="#input1" data-toggle="datetimepicker">
