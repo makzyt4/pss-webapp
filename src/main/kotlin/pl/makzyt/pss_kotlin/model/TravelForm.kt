@@ -24,6 +24,16 @@ class TravelForm {
     var dietCost: Float? = null
 
     @NotNull(message = "{validation.emptyData}")
-    @Pattern(regexp = "^\\d*$", message = "{validation.incorrectNumber}")
+    @Pattern(regexp = "^\\d+$", message = "{validation.incorrectNumber}")
     var breakfastNumber: String? = null
+
+    @NotNull(message = "{validation.emptyData}")
+    @Pattern(regexp = "^\\d+$", message = "{validation.incorrectNumber}")
+    var dinnerNumber: String? = null
+
+    @NotNull(message = "{validation.emptyData}")
+    @Pattern(regexp = "^\\d+$", message = "{validation.incorrectNumber}")
+    var supperNumber: String? = null
+
+    var transportType: String? = null
 }

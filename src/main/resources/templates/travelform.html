@@ -16,7 +16,12 @@
                 <div class="col">
                     <div th:include="_fragments :: currencyRight('Wysokość diety za dobę podróży', input3, dietCost, 'zł')"></div>
                     <hr>
-                    <div th:include="_fragments :: stdInputRight('Ilość śniadań', input3, breakfastNumber, 'number', '0')"></div>
+                    <div th:include="_fragments :: stdInputRight('Ilość śniadań', input4, breakfastNumber, 'number', '0')"></div>
+                    <div th:include="_fragments :: stdInputRight('Ilość obiadów', input5, dinnerNumber, 'number', '0')"></div>
+                    <div th:include="_fragments :: stdInputRight('Ilość kolacji', input6, supperNumber, 'number', '0')"></div>
+                </div>
+                <div class="col">
+                    <div th:include="_fragments :: stdInput('Rodzaj transportu', input7, transportType, 'text', '')"></div>
                 </div>
             </div>
 
