@@ -17,6 +17,15 @@
             </div>
         </div>
         <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
+
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+            $(document).ready(function() {
+                var id = '#' + /*[[${inputId}]]*/ 'default';
+                $(id).datetimepicker({format: 'DD.MM.YYYY HH:mm'});
+            });
+            /*]]>*/
+        </script>
     </div>
 </div>
 </body>
