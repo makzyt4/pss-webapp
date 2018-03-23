@@ -26,11 +26,33 @@
                 <td class="text-right" th:text="${result.travelTime}"></td>
             </tr>
             <tr>
+                <td>Wysokość diet</td>
+                <td class="text-right" th:text="${result.dietCost}"></td>
+            </tr>
+            <tr>
+                <td>Liczba zapewnionych śniadań</td>
+                <td class="text-right" th:text="${result.breakfastNumber}"></td>
+            </tr>
+            <tr>
+                <td>Liczba zapewnionych obiadów</td>
+                <td class="text-right" th:text="${result.dinnerNumber}"></td>
+            </tr>
+            <tr>
+                <td>Liczba zapewnionych kolacji</td>
+                <td class="text-right" th:text="${result.supperNumber}"></td>
+            </tr>
+            <tr>
+                <td>Łączna kwota zmniejszająca diety z tytułu zapewnionego bezpłatnego wyżywienia</td>
+                <td class="text-right" th:text="${result.eliminatedCateringCost}"></td>
+            </tr>
+            <tr>
                 <td>Do zwrotu</td>
                 <td class="text-right" th:text="${result.cost}"></td>
             </tr>
             </tbody>
         </table>
+
+        <a class="btn btn-primary" href="/travel/form">Wróć</a>
     </div>
 </div>
 </body>

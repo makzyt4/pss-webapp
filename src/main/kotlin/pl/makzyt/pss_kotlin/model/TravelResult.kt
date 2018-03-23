@@ -10,6 +10,12 @@ class TravelResult(form: TravelForm) {
     val travelTimeHours: Int = (travelTimeInSec / 3600).toInt()
     val travelTimeMinutes: Int = travelTimeAllMinutes - travelTimeHours * 60
     val travelTime = String.format("%d g %d min", travelTimeHours, travelTimeMinutes)
+    val dietCost = String.format("%.2f zł", form.dietCost)
+    val breakfastNumber: Int = Integer.parseInt(form.breakfastNumber)
+    val dinnerNumber: Int = Integer.parseInt(form.dinnerNumber)
+    val supperNumber: Int = Integer.parseInt(form.supperNumber)
+
+    val eliminatedCateringCost = String.format("%.2f zł", 7.5f * breakfastNumber + 15f * dinnerNumber + 7.5f * supperNumber)
 
     val timeCost = (180f / 7f / 24f / 3600f) * (form.returnDate!!.time - form.departureDate!!.time) / 1000f
 
