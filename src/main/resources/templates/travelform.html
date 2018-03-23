@@ -15,16 +15,7 @@
         <form th:action="@{/travel/form}" th:object="${form}" method="post">
             <div class="form-row">
                 <div class="col">
-                    <div class="form-group mb-5">
-                        <label class="form-label">Data i godzina wyjazdu</label>
-                        <div class="input-group date" id="input1" data-target-input="nearest">
-                            <input type="text" class="form-control datetimepicker-input" data-target="#input1" th:field="*{departureDate}"/>
-                            <div class="input-group-append" data-target="#input1" data-toggle="datetimepicker">
-                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                            </div>
-                        </div>
-                        <small class="form-text text-danger" th:if="${#fields.hasErrors('departureDate')}" th:errors="*{departureDate}" ></small>
-                    </div>
+                    <div th:include="_fragments :: datetimePicker('Data i godzina wyjazdu', input1, departureDate)"></div>
                 </div>
             </div>
 

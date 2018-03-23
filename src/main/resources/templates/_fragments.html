@@ -7,5 +7,17 @@
         <p class="lead">Kalkulator obliczający wartość kosztów delegacji pracownika</p>
     </div>
 </div>
+<div th:fragment="datetimePicker(title, inputId, fieldName)">
+    <div class="form-group mb-5">
+        <label class="form-label" th:text="${title}"></label>
+        <div class="input-group date" th:id="${inputId}" data-target-input="nearest">
+            <input type="text" class="form-control datetimepicker-input" data-target="'#' + ${inputId}" th:field="*{__${fieldName}__}"/>
+            <div class="input-group-append" th:data-target="'#' + ${inputId}" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+            </div>
+        </div>
+        <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
+    </div>
+</div>
 </body>
 </html>
