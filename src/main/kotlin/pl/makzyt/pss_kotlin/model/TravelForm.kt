@@ -40,4 +40,24 @@ class TravelForm {
     @NotNull(message = "{validation.emptyData}")
     @DecimalMin(value = "0", message = "{validation.negativeCost}")
     var ticketPrice: Float? = null
+
+    @NotNull(message = "{validation.emptyData}")
+    @DecimalMin(value = "0", message = "{validation.negativeCost}")
+    var trackCarBelow900: Float? = null
+
+    @NotNull(message = "{validation.emptyData}")
+    @DecimalMin(value = "0", message = "{validation.negativeCost}")
+    var trackCarOver900: Float? = null
+
+    @NotNull(message = "{validation.emptyData}")
+    @DecimalMin(value = "0", message = "{validation.negativeCost}")
+    var trackMotorcycle: Float? = null
+
+    @NotNull(message = "{validation.emptyData}")
+    @DecimalMin(value = "0", message = "{validation.negativeCost}")
+    var trackMotorbike: Float? = null
+
+    @NotNull(message = "{validation.emptyData}")
+    @DecimalMin(value = "0", message = "{validation.negativeCost}")
+    var advance: Float? = null
 }
