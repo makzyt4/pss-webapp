@@ -17,8 +17,9 @@
             </div>
         </div>
         <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
+    </div>
 
-        <script th:inline="javascript">
+    <script th:inline="javascript">
             /*<![CDATA[*/
             $(document).ready(function() {
                 var id = '#' + /*[[${inputId}]]*/ 'default';
@@ -26,12 +27,25 @@
             });
             /*]]>*/
         </script>
-    </div>
 </div>
-<div th:fragment="stdInput(title, inputId, fieldName, type)">
+
+<div th:fragment="stdInput(title, inputId, fieldName, type, placeholder)">
     <div class="form-group">
         <label class="form-label" th:text="${title}"></label>
         <input th:attr="type=${type}" class="form-control" th:id="${inputId}" th:field="*{__${fieldName}__}"/>
+    </div>
+    <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
+</div>
+
+<div th:fragment="currencyRight(title, inputId, fieldName, currency)">
+    <div class="form-group">
+        <label class="form-label" th:text="${title}"></label>
+        <div class="input-group" th:id="${inputId}">
+            <input type="text" class="form-control text-right" onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)" placeholder="0.00" th:field="*{__${fieldName}__}"/>
+            <div class="input-group-append">
+                <div class="input-group-text" th:text="${currency}"></div>
+            </div>
+        </div>
     </div>
     <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
 </div>
