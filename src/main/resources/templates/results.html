@@ -14,12 +14,20 @@
             <tbody>
             <th colspan="2">Dieta</th>
             <tr>
-                <td>Data i godzina wyjazdu:</td>
+                <td>Data i godzina wyjazdu</td>
                 <td class="text-right" th:text="${result.depDate}"></td>
             </tr>
             <tr>
-                <td>Data i godzina powrotu:</td>
+                <td>Data i godzina powrotu</td>
                 <td class="text-right" th:text="${result.retDate}"></td>
+            </tr>
+            <tr>
+                <td>Czas podróży</td>
+                <td class="text-right" th:text="${result.travelTime}"></td>
+            </tr>
+            <tr>
+                <td>Do zwrotu</td>
+                <td class="text-right" th:text="${result.cost}"></td>
             </tr>
             </tbody>
         </table>
