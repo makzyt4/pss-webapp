@@ -57,5 +57,18 @@
     </div>
     <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
 </div>
+
+<div th:fragment="inputWithAppend(title, inputId, fieldName, placeholder, appendText)">
+    <div class="form-group">
+        <label class="form-label" th:text="${title}"></label>
+        <div class="input-group" th:id="${inputId}">
+            <input type="text" class="form-control text-right" th:attr="placeholder=${placeholder}" th:field="*{__${fieldName}__}"/>
+            <div class="input-group-append">
+                <div class="input-group-text" th:text="${appendText}"></div>
+            </div>
+        </div>
+    </div>
+    <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
+</div>
 </body>
 </html>

@@ -22,6 +22,12 @@
                 </div>
                 <div class="col">
                     <div th:include="_fragments :: stdInput('Rodzaj transportu', input7, transportType, 'text', '')"></div>
+                    <hr>
+                    <div th:include="_fragments :: currencyRight('Cena biletu za przejazd', input8, ticketPrice, 'zł')"></div>
+                    <hr>
+                    <b class="text-muted">Przejazd niebędącym własnością pracodawcy (liczba faktycznie przejechanych kilometrów)</b>
+                    <div th:include="_fragments :: currencyRight('samochodem osobowym o pojemności silnika do 900 cm3', input9, ticketPrice, 'km')"></div>
+                    <div th:include="_fragments :: currencyRight('samochodem osobowym o pojemności silnika powyżej 900 cm3', input10, ticketPrice, 'km')"></div>
                 </div>
             </div>
 

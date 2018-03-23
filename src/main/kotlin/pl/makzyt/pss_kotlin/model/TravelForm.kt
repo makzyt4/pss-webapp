@@ -36,4 +36,8 @@ class TravelForm {
     var supperNumber: String? = null
 
     var transportType: String? = null
+
+    @NotNull(message = "{validation.emptyData}")
+    @DecimalMin(value = "0", message = "{validation.negativeCost}")
+    var ticketPrice: Float? = null
 }
