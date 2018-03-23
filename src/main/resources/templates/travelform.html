@@ -6,6 +6,7 @@
     <script>
         $(document).ready(function() {
             $('#input1').datetimepicker();
+            $('#input2').datetimepicker();
         });
     </script>
 </head>
@@ -16,6 +17,9 @@
             <div class="form-row">
                 <div class="col">
                     <div th:include="_fragments :: datetimePicker('Data i godzina wyjazdu', input1, departureDate)"></div>
+                </div>
+                <div class="col">
+                    <div th:include="_fragments :: datetimePicker('Data i godzina przyjazdu', input2, returnDate)"></div>
                 </div>
             </div>
 

@@ -11,8 +11,8 @@
     <div class="form-group mb-5">
         <label class="form-label" th:text="${title}"></label>
         <div class="input-group date" th:id="${inputId}" data-target-input="nearest">
-            <input type="text" class="form-control datetimepicker-input" data-target="'#' + ${inputId}" th:field="*{__${fieldName}__}"/>
-            <div class="input-group-append" th:data-target="'#' + ${inputId}" data-toggle="datetimepicker">
+            <input type="text" class="form-control datetimepicker-input" th:attr="data-target='#' + ${inputId}" th:field="*{__${fieldName}__}"/>
+            <div class="input-group-append" th:attr="data-target='#' + ${inputId}" data-toggle="datetimepicker">
                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
             </div>
         </div>
