@@ -8,7 +8,7 @@
     </div>
 </div>
 <div th:fragment="datetimePicker(title, inputId, fieldName)">
-    <div class="form-group mb-5">
+    <div class="form-group">
         <label class="form-label" th:text="${title}"></label>
         <div class="input-group date" th:id="${inputId}" data-target-input="nearest">
             <input type="text" class="form-control datetimepicker-input" th:attr="data-target='#' + ${inputId}" th:field="*{__${fieldName}__}"/>
@@ -27,6 +27,13 @@
             /*]]>*/
         </script>
     </div>
+</div>
+<div th:fragment="stdInput(title, inputId, fieldName, type)">
+    <div class="form-group">
+        <label class="form-label" th:text="${title}"></label>
+        <input th:attr="type=${type}" class="form-control" th:id="${inputId}" th:field="*{__${fieldName}__}"/>
+    </div>
+    <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
 </div>
 </body>
 </html>
