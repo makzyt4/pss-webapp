@@ -4,9 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat
 import pl.makzyt.pss_kotlin.validator.CorrectDates
 import pl.makzyt.pss_kotlin.validator.PresentOrFuture
 import java.util.*
-import javax.validation.constraints.DecimalMin
-import javax.validation.constraints.FutureOrPresent
-import javax.validation.constraints.NotNull
+import javax.validation.constraints.*
 
 @CorrectDates(message = "{validation.incorrectDates}")
 class TravelForm {
@@ -24,4 +22,8 @@ class TravelForm {
     @NotNull(message = "{validation.emptyData}")
     @DecimalMin(value = "0", message = "{validation.negativeCost}")
     var dietCost: Float? = null
+
+    @NotNull(message = "{validation.emptyData}")
+    @Pattern(regexp = "^\\d*$", message = "{validation.incorrectNumber}")
+    var breakfastNumber: String? = null
 }

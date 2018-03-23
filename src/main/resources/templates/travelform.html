@@ -11,10 +11,12 @@
             <div class="form-row">
                 <div class="col">
                     <div th:include="_fragments :: datetimePicker('Data i godzina wyjazdu', input1, departureDate)"></div>
-                    <div th:include="_fragments :: currencyRight('Wysokość diety za dobę podróży', input3, dietCost, 'zł')"></div>
+                    <div th:include="_fragments :: datetimePicker('Data i godzina przyjazdu', input2, returnDate)"></div>
                 </div>
                 <div class="col">
-                    <div th:include="_fragments :: datetimePicker('Data i godzina przyjazdu', input2, returnDate)"></div>
+                    <div th:include="_fragments :: currencyRight('Wysokość diety za dobę podróży', input3, dietCost, 'zł')"></div>
+                    <hr>
+                    <div th:include="_fragments :: stdInputRight('Ilość śniadań', input3, breakfastNumber, 'number', '0')"></div>
                 </div>
             </div>
 
