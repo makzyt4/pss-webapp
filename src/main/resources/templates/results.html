@@ -27,7 +27,7 @@
             </tr>
             <tr>
                 <td>Wysokość diet</td>
-                <td class="text-right" th:text="${result.dietCost}"></td>
+                <td class="text-right" th:text="${result.dietCostStr}"></td>
             </tr>
             <tr>
                 <td>Liczba zapewnionych śniadań</td>
@@ -43,11 +43,45 @@
             </tr>
             <tr>
                 <td>Łączna kwota zmniejszająca diety z tytułu zapewnionego bezpłatnego wyżywienia</td>
-                <td class="text-right" th:text="${result.eliminatedCateringCost}"></td>
+                <td class="text-right" th:text="${result.eliminatedCateringCostStr}"></td>
+            </tr>
+            <th colspan="2">Zwrot kosztów przejazdu</th>
+            <tr th:if="${not #strings.isEmpty(result.transportType)}">
+                <td>Rodzaj transportu</td>
+                <td class="text-right" th:text="${result.transportType}"></td>
             </tr>
             <tr>
-                <td>Do zwrotu</td>
-                <td class="text-right" th:text="${result.cost}"></td>
+                <td>Koszty przejazdów według ceny biletu</td>
+                <td class="text-right" th:text="${result.ticketPriceStr}"></td>
+            </tr>
+            <tr>
+                <td>Przejazd samochodem osobowym (do 900 cm<sup>3</sup>)</td>
+                <td class="text-right" th:text="${result.travelCostCarBelow900Str}"></td>
+            </tr>
+            <tr>
+                <td>Przejazd samochodem osobowym (powyżej 900 cm<sup>3</sup>)</td>
+                <td class="text-right" th:text="${result.travelCostCarOver900Str}"></td>
+            </tr>
+            <tr>
+                <td>Przejazd motocyklem</td>
+                <td class="text-right" th:text="${result.travelCostMotorcycleStr}"></td>
+            </tr>
+            <tr>
+                <td>Przejazd motorowerem</td>
+                <td class="text-right" th:text="${result.travelCostMotorbikeStr}"></td>
+            </tr>
+            <th colspan="2">Wynik</th>
+            <tr>
+                <td>Suma kosztów</td>
+                <td class="text-right" th:text="${result.costSumStr}"></td>
+            </tr>
+            <tr>
+                <td>Pobrana zaliczka</td>
+                <td class="text-right" th:text="${result.advanceStr}"></td>
+            </tr>
+            <tr>
+                <td>Do zapłaty</td>
+                <td class="text-right" th:text="${result.costPlusAdvanceStr}"></td>
             </tr>
             </tbody>
         </table>

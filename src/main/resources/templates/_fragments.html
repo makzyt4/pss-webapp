@@ -16,7 +16,7 @@
 
 <div th:fragment="datetimePicker(title, inputId, fieldName)">
     <div class="form-group">
-        <label class="form-label" th:text="${title}"></label>
+        <label class="form-label" th:utext="${title}"></label>
         <div class="input-group date" th:id="${inputId}" data-target-input="nearest">
             <input type="text" class="form-control datetimepicker-input" th:attr="data-target='#' + ${inputId}" th:field="*{__${fieldName}__}"/>
             <div class="input-group-append" th:attr="data-target='#' + ${inputId}" data-toggle="datetimepicker">
@@ -38,7 +38,7 @@
 
 <div th:fragment="stdInput(title, inputId, fieldName, type, placeholder)">
     <div class="form-group">
-        <label class="form-label" th:text="${title}"></label>
+        <label class="form-label" th:utext="${title}"></label>
         <input th:attr="type=${type}, placeholder=${placeholder}" class="form-control" th:id="${inputId}" th:field="*{__${fieldName}__}"/>
     </div>
     <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
@@ -46,7 +46,7 @@
 
 <div th:fragment="stdInputRight(title, inputId, fieldName, type, placeholder)">
     <div class="form-group">
-        <label class="form-label" th:text="${title}"></label>
+        <label class="form-label" th:utext="${title}"></label>
         <input th:attr="type=${type}, placeholder=${placeholder}" class="form-control text-right" th:id="${inputId}" th:field="*{__${fieldName}__}"/>
     </div>
     <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
@@ -54,7 +54,7 @@
 
 <div th:fragment="currencyRight(title, inputId, fieldName, currency)">
     <div class="form-group">
-        <label class="form-label" th:text="${title}"></label>
+        <label class="form-label" th:utext="${title}"></label>
         <div class="input-group" th:id="${inputId}">
             <input type="text" class="form-control text-right" onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)" placeholder="0.00" th:field="*{__${fieldName}__}"/>
             <div class="input-group-append">
@@ -67,7 +67,7 @@
 
 <div th:fragment="inputWithAppend(title, inputId, fieldName, placeholder, appendText)">
     <div class="form-group">
-        <label class="form-label" th:text="${title}"></label>
+        <label class="form-label" th:utext="${title}"></label>
         <div class="input-group" th:id="${inputId}">
             <input type="text" class="form-control text-right" th:attr="placeholder=${placeholder}" th:field="*{__${fieldName}__}"/>
             <div class="input-group-append">

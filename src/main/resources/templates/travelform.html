@@ -26,9 +26,9 @@
                     <div th:include="_fragments :: stdInputRight('Ilość kolacji', input6, supperNumber, 'number', '0')"></div>
                 </div>
                 <div class="col">
-                    <b class="text-muted">Przejazd niebędącym własnością pracodawcy (liczba faktycznie przejechanych kilometrów)</b>
-                    <div th:include="_fragments :: currencyRight('samochodem osobowym o pojemności silnika do 900 cm3', input9, trackCarBelow900, 'km')"></div>
-                    <div th:include="_fragments :: currencyRight('samochodem osobowym o pojemności silnika powyżej 900 cm3', input10, trackCarOver900, 'km')"></div>
+                    <b class="text-muted">Przejazd niebędący własnością pracodawcy (liczba faktycznie przejechanych kilometrów)</b>
+                    <div th:include="_fragments :: currencyRight('samochodem osobowym o pojemności silnika do 900 cm<sup>3</sup>', input9, trackCarBelow900, 'km')"></div>
+                    <div th:include="_fragments :: currencyRight('samochodem osobowym o pojemności silnika powyżej 900 cm<sup>3</sup>', input10, trackCarOver900, 'km')"></div>
                     <div th:include="_fragments :: currencyRight('motocyklem', input11, trackMotorcycle, 'km')"></div>
                     <div th:include="_fragments :: currencyRight('motorowerem', input12, trackMotorbike, 'km')"></div>
                 </div>
