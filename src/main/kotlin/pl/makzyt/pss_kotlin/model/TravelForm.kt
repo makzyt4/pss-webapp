@@ -2,7 +2,6 @@ package pl.makzyt.pss_kotlin.model
 
 import org.springframework.format.annotation.DateTimeFormat
 import pl.makzyt.pss_kotlin.validator.CorrectDates
-import pl.makzyt.pss_kotlin.validator.PresentOrFuture
 import java.util.*
 import javax.validation.constraints.*
 
