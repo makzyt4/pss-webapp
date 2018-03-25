@@ -9,8 +9,6 @@ buildscript {
     }
 }
 
-task stage(dependsOn: ['installDist'])
-
 group 'pl.makzyt'
 version '1.0-SNAPSHOT'
 
