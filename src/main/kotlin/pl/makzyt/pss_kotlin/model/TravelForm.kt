@@ -9,12 +9,10 @@ import javax.validation.constraints.*
 class TravelForm {
 
     @NotNull(message = "{validation.emptyData}")
-    @FutureOrPresent(message = "{validation.futureDate}")
     @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm")
     var departureDate: Date? = null
 
     @NotNull(message = "{validation.emptyData}")
-    @FutureOrPresent(message = "{validation.futureDate}")
     @DateTimeFormat(pattern = "dd.MM.yyyy HH:mm")
     var returnDate: Date? = null
 

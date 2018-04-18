@@ -18,7 +18,9 @@ class TravelResult(form: TravelForm) {
     val supperNumber: Int = Integer.parseInt(form.supperNumber)
     val transportType: String? = form.transportType
     val eliminatedCateringCostStr: String = String.format("%.2f zł",
-            7.5f * breakfastNumber + 15f * dinnerNumber + 7.5f * supperNumber)
+            (0.25f * breakfastNumber +
+                    0.5f * dinnerNumber +
+                    0.25f * supperNumber) * form.dietCost!!)
     val ticketPriceStr: String = String.format("%.2f zł", form.ticketPrice)
     val advanceStr = String.format("%.2f zł", form.advance)
 
