@@ -1,5 +1,6 @@
 package pl.makzyt.psskotlin.model
 
+import org.hibernate.validator.constraints.Length
 import pl.makzyt.psskotlin.validator.PasswordRepeated
 import javax.validation.constraints.NotEmpty
 
@@ -12,7 +13,7 @@ class SignUpForm {
     @NotEmpty(message = "{validation.emptyData}")
     var login: String = ""
     @NotEmpty(message = "{validation.emptyData}")
+    @Length(min = 6, max = 32, message = "{validation.passwordLength}")
     var password: String = ""
-    @NotEmpty(message = "{validation.emptyData}")
     var repeatPassword: String = ""
 }

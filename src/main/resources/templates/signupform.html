@@ -7,6 +7,9 @@
 <body>
 <div layout:fragment="content">
     <div class="container">
+
+        <div th:if="${success}" class="alert alert-info">Zarejestrowano pomyślnie!</div>
+
         <form th:action="@{/signup}" th:object="${form}" method="post">
 
             <div th:include="_fragments :: textInput('Nazwa firmy', input1, companyName)"></div>
