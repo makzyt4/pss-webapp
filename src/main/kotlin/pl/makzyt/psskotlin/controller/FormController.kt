@@ -14,7 +14,7 @@ import javax.validation.Valid
 
 @Controller
 @RequestMapping("/travel")
-open class GreetingController {
+open class FormController {
 
     @InitBinder
     fun bindingPreparation(binder: WebDataBinder) {
