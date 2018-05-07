@@ -1,4 +1,4 @@
-package pl.makzyt.pss_kotlin.controller
+package pl.makzyt.psskotlin.controller
 
 import org.springframework.beans.propertyeditors.CustomDateEditor
 import org.springframework.stereotype.Controller
@@ -6,8 +6,8 @@ import org.springframework.ui.Model
 import org.springframework.validation.BindingResult
 import org.springframework.web.bind.WebDataBinder
 import org.springframework.web.bind.annotation.*
-import pl.makzyt.pss_kotlin.model.TravelForm
-import pl.makzyt.pss_kotlin.model.TravelResult
+import pl.makzyt.psskotlin.model.TravelForm
+import pl.makzyt.psskotlin.model.TravelResult
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.validation.Valid

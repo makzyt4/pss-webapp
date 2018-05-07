@@ -1,4 +1,4 @@
-package pl.makzyt.pss_kotlin.validator
+package pl.makzyt.psskotlin.validator
 
 import java.lang.annotation.Documented
 import javax.validation.Constraint

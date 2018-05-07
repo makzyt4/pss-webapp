@@ -1,7 +1,6 @@
-package pl.makzyt.pss_kotlin.validator
+package pl.makzyt.psskotlin.validator
 
-import pl.makzyt.pss_kotlin.model.TravelForm
-import java.util.*
+import pl.makzyt.psskotlin.model.TravelForm
 import javax.validation.ConstraintValidator
 import javax.validation.ConstraintValidatorContext
 

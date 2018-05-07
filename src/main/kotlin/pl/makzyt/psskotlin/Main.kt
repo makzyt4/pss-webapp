@@ -1,4 +1,4 @@
-package pl.makzyt.pss_kotlin
+package pl.makzyt.psskotlin
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

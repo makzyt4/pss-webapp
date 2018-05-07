@@ -1,4 +1,4 @@
-package pl.makzyt.pss_kotlin.model
+package pl.makzyt.psskotlin.model
 
 import javax.persistence.*
 
