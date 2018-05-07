@@ -63,6 +63,16 @@
     </div>
 </div>
 
+<div th:fragment="passwordInput(title, inputId, fieldName)">
+    <div class="form-group row">
+        <label th:attr="for=${inputId}" class="col-3 col-form-label" th:utext="${title}"></label>
+        <div class="col-5">
+            <input type="password" class="form-control"  th:field="*{__${fieldName}__}" th:id="${inputId}">
+        </div>
+        <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
+    </div>
+</div>
+
 <div th:fragment="currencyRight(title, inputId, fieldName, currency)">
     <div class="form-group">
         <label class="form-label" th:utext="${title}"></label>
