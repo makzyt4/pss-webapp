@@ -6,13 +6,10 @@ import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestMapping
 import pl.makzyt.psskotlin.model.SignUpForm
-import pl.makzyt.psskotlin.model.TravelForm
 import javax.validation.Valid
 
 @Controller
-@RequestMapping("/travel")
 open class SignUpController {
 
     @GetMapping("/signup")
@@ -21,12 +18,12 @@ open class SignUpController {
         return "signupform"
     }
 
-    @PostMapping("/form")
-    fun results(@Valid @ModelAttribute("form") form: SignUpForm, result: BindingResult, model: Model): String {
-        if (result.hasErrors()) {
-            return "signupform"
+    @PostMapping("/signup")
+    fun form(@Valid @ModelAttribute("form") form: SignUpForm, result: BindingResult, model: Model): String {
+        if (!result.hasErrors()) {
+            model.addAttribute("success", true)
         }
 
-        return "redirect:/login"
+        return "signupform"
     }
 }

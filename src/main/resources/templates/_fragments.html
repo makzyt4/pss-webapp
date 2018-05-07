@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="htpp://www.thymeleaf.org">
+<html xmlns:th="htpp://www.thymeleaf.org">
 <body>
 <div th:fragment="header">
     <div class="jumbotron text-center">
@@ -50,6 +50,17 @@
         <input th:attr="type=${type}, placeholder=${placeholder}" class="form-control text-right" th:id="${inputId}" th:field="*{__${fieldName}__}"/>
     </div>
     <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
+</div>
+
+
+<div th:fragment="textInput(title, inputId, fieldName)">
+    <div class="form-group row">
+        <label th:attr="for=${inputId}" class="col-3 col-form-label" th:utext="${title}"></label>
+        <div class="col-5">
+            <input type="text" class="form-control"  th:field="*{__${fieldName}__}" th:id="${inputId}">
+        </div>
+        <small class="form-text text-danger" th:if="${#fields.hasErrors('__${fieldName}__')}" th:errors="*{__${fieldName}__}" ></small>
+    </div>
 </div>
 
 <div th:fragment="currencyRight(title, inputId, fieldName, currency)">

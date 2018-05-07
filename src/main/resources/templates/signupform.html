@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default}">
+<head>
+    <title>Kalkulator krajowej podróży służbowej</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container">
+        <form th:action="@{/signup}" th:object="${form}" method="post">
+
+            <div th:include="_fragments :: textInput('Nazwa firmy', input1, companyName)"></div>
+            <div th:include="_fragments :: textInput('NIP', input2, nip)"></div>
+            <div th:include="_fragments :: textInput('Login', input3, login)"></div>
+            <div th:include="_fragments :: textInput('Hasło', input4, password)"></div>
+            <div th:include="_fragments :: textInput('Powtórz hasło', input5, repeatPassword)"></div>
+
+            <hr>
+            <small class="form-text text-danger" th:if="${#fields.hasErrors('${form}')}" th:errors="${form}" ></small>
+            <hr>
+
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary">Zarejestruj się</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
