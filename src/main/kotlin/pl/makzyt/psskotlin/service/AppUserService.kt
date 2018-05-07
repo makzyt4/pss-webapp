@@ -21,4 +21,8 @@ class AppUserService {
 
         appUserRepository.save(user)
     }
+
+    fun findByLogin(login: String): AppUser? {
+        return appUserRepository.findByLogin(login)
+    }
 }

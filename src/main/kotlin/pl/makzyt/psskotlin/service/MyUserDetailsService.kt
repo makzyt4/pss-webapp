@@ -14,8 +14,8 @@ open class MyUserDetailsService : UserDetailsService {
     @Autowired
     lateinit var appUserRepository: AppUserRepository
 
-    override fun loadUserByUsername(login: String): UserDetails {
-        val user = appUserRepository.findByLogin(login.toLowerCase())
+    override fun loadUserByUsername(login: String): UserDetails? {
+        val user = appUserRepository.findByLogin(login.toLowerCase()) ?: return null
 
         val builder = User.withUsername(login)
         builder.password(user.password)
