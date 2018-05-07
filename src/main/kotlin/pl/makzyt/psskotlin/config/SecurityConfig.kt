@@ -35,6 +35,7 @@ open class SecurityConfig : WebSecurityConfigurerAdapter() {
                 .antMatchers("/**").permitAll()
                 .and()
                 .formLogin()
+                .loginPage("/login")
                 .usernameParameter("login")
                 .usernameParameter("password")
                 .successForwardUrl("/travel/form")

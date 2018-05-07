@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default}">
+<head>
+    <title>Rejestracja</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container">
+
+        <div th:if="${failure}" class="alert alert-danger">Nieprawidłowy login lub hasło.</div>
+
+        <form th:action="@{/login}" th:object="${form}" method="post">
+
+            <div th:include="_fragments :: textInput('Login', input1, login)"></div>
+            <div th:include="_fragments :: passwordInput('Hasło', input2, password)"></div>
+
+            <div class="btn-group">
+                <button type="submit" class="btn btn-primary">Zaloguj się</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
