@@ -1,10 +1,41 @@
 <!DOCTYPE HTML>
-<html xmlns:th="htpp://www.thymeleaf.org">
+<html xmlns:th="htpp://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <body>
 <div th:fragment="header">
     <div class="jumbotron text-center">
         <h1>Kalkulator krajowej podróży służbowej</h1>
         <p class="lead">Kalkulator obliczający wartość kosztów delegacji pracownika</p>
+    </div>
+
+    <div class="bs-component">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Carrental</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" style="">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse" id="navbar" role="navigation">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{~/travel/form}">Kalkulator podróży służbowej</a>
+                    </li>
+                </ul>
+                <div class="row pull-right">
+                    <div class="btn-group" sec:authorize="isAnonymous()">
+                        <a class="btn btn-primary" th:href="@{~/login}">Zaloguj się</a>
+                        <a class="btn btn-secondary" th:href="@{~/signup}">Zarejestruj się</a>
+                    </div>
+                    <span sec:authorize="isAuthenticated()">
+                        Zalogowany jako <span sec:authentication="name"></span>
+                    </span>
+                    <span class="col"></span>
+                </div>
+                <form sec:authorize="isAuthenticated()" th:action="@{~/logout}" method="post">
+                    <button class="btn btn-secondary" type="submit">Wyloguj się</button>
+                </form>
+            </div>
+        </nav>
     </div>
 </div>
 
