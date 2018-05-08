@@ -15,6 +15,7 @@ class SignUpForm {
     var nip: String = ""
     @NotEmpty(message = "{validation.emptyData}")
     @UniqueLogin(message = "{validation.loginNotUnique}")
+    @Pattern(message = "{validation.loginRegex}", regexp = "[\\w\\d]{5,16}")
     var login: String = ""
     @NotEmpty(message = "{validation.emptyData}")
     @Length(min = 6, max = 32, message = "{validation.passwordLength}")
