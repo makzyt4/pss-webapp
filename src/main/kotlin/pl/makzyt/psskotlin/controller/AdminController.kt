@@ -31,6 +31,6 @@ class AdminController {
             appUserService.create(form)
         }
 
-        return "signupform"
+        return "createuser"
     }
 }

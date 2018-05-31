@@ -20,6 +20,9 @@
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{~/travel/form}">Kalkulator podróży służbowej</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{~/admin/createuser}" sec:authorize="hasRole('ADMIN')">Utwórz użytkownika</a>
+                    </li>
                 </ul>
                 <div class="row pull-right">
                     <div class="btn-group" sec:authorize="isAnonymous()">
