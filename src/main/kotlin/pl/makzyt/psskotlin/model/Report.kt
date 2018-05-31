@@ -2,7 +2,7 @@ package pl.makzyt.psskotlin.model
 
 import java.util.*
 
-class Report(form: TravelForm) {
+class Report {
     var author: String = ""
     var companyName: String = ""
     var creationDate: Date = Date()
@@ -15,7 +15,7 @@ class Report(form: TravelForm) {
     var dinnerNumber: String = ""
     var supperNumber: String = ""
     var eliminatedCateringCostStr: String = ""
-    var transportType: String = ""
+    var transportType: String? = ""
     var ticketPriceStr: String = ""
     var travelCostCarBelow900Str: String = ""
     var travelCostCarOver900Str: String = ""
