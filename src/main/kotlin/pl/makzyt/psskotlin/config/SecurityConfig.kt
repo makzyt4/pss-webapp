@@ -32,6 +32,7 @@ open class SecurityConfig : WebSecurityConfigurerAdapter() {
         http
                 .authorizeRequests()
                 .antMatchers("/travel/**").authenticated()
+                .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/**").permitAll()
                 .and()
                 .formLogin()
