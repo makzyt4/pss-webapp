@@ -1,6 +1,12 @@
 package pl.makzyt.psskotlin.model
 
+import java.util.*
+
 class Report(form: TravelForm) {
+    var author: String = ""
+    var companyName: String = ""
+    var creationDate: Date = Date()
+
     var depDate: String = ""
     var retDate: String = ""
     var travelTime: String = ""
