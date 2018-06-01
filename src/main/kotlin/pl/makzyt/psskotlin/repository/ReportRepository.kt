@@ -5,4 +5,7 @@ import org.springframework.stereotype.Repository
 import pl.makzyt.psskotlin.model.Report
 
 @Repository
-interface ReportRepository : JpaRepository<Report, Long>
+interface ReportRepository : JpaRepository<Report, Long> {
+    fun findAllByOrderByCompanyName(): Array<Report>
+    fun findAllByOrderByCreationDate(): Array<Report>
+}

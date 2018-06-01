@@ -14,8 +14,8 @@
             <tbody>
                 <tr>
                     <th>Autor</th>
-                    <th>Firma</th>
-                    <th>Data</th>
+                    <th><a th:href="@{~/admin/reports/by-company}">Firma</a></th>
+                    <th><a th:href="@{~/admin/reports/by-date}">Data utworzenia</a></th>
                     <th>Akcje</th>
                 </tr>
                 <tr th:each="report : ${reportList}">

@@ -12,6 +12,7 @@ class Report {
 
     @ManyToOne
     var author: AppUser? = null
+    var companyName: String = ""
 
     val creationDate: Date = Date()
 

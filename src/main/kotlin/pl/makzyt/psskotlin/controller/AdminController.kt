@@ -42,6 +42,18 @@ class AdminController {
         return "reportlist"
     }
 
+    @GetMapping("/reports/by-company")
+    fun reportsByCompany(model: Model): String {
+        model.addAttribute("reportList", reportService.findAllByOrderByCompanyName())
+        return "reportlist"
+    }
+
+    @GetMapping("/reports/by-date")
+    fun reportsByDate(model: Model): String {
+        model.addAttribute("reportList", reportService.findAllByOrderByCreationDate())
+        return "reportlist"
+    }
+
     @GetMapping("/reports/show/{id}")
     fun reportsShow(@PathVariable("id") id: Long, model: Model): String {
         val report = reportService.findById(id)!!.get()

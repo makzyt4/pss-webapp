@@ -24,6 +24,14 @@ class ReportService {
         return reportRepository.findAll()
     }
 
+    fun findAllByOrderByCompanyName(): Array<Report> {
+        return reportRepository.findAllByOrderByCompanyName()
+    }
+
+    fun findAllByOrderByCreationDate(): Array<Report> {
+        return reportRepository.findAllByOrderByCreationDate()
+    }
+
     fun deleteById(id: Long) {
         reportRepository.deleteById(id)
     }
@@ -33,6 +41,7 @@ class ReportService {
 
         val report = Report()
         report.author = user
+        report.companyName = user.companyName
 
         report.depDate = travelResult.depDate
         report.retDate = travelResult.retDate
