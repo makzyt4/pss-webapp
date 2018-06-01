@@ -6,7 +6,6 @@ import pl.makzyt.psskotlin.model.Report
 import pl.makzyt.psskotlin.model.TravelResult
 import pl.makzyt.psskotlin.repository.ReportRepository
 import java.security.Principal
-import java.util.*
 
 @Service
 class ReportService {
@@ -14,16 +13,17 @@ class ReportService {
     lateinit var reportRepository: ReportRepository
 
     @Autowired
-    private
     lateinit var appUserService: AppUserService
 
-    fun saveFromResult(principal: Principal, travelResult: TravelResult) {
-        val user = appUserService.findByLogin(principal.name) ?: return
+    fun findAll(): MutableList<Report>? {
+        return reportRepository.findAll()
+    }
+
+    fun saveFromResult(principal: Principal?, travelResult: TravelResult) {
+        val user = appUserService.findByLogin(principal!!.name) ?: return
 
         val report = Report()
-        report.author = user.login
-        report.companyName = user.companyName
-        report.creationDate = Date()
+        report.author = user
 
         report.depDate = travelResult.depDate
         report.retDate = travelResult.retDate

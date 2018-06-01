@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default}">
+<head>
+    <title>Lista raportów</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+    <p class="lead text-center">Lista raportów</p>
+
+    <div class="container">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Autor</th>
+                    <th>Firma</th>
+                    <th>Data</th>
+                    <th>Akcje</th>
+                </tr>
+                <tr th:each="report : ${reportList}">
+                    <td th:text="${report.author.login}"></td>
+                    <td th:text="${report.author.companyName}"></td>
+                    <td th:text="${report.creationDate}"></td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="#" class="btn btn-primary btn-sm">Podgląd</a>
+                            <a href="#" class="btn btn-danger btn-sm">Usuń</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>

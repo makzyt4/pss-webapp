@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import pl.makzyt.psskotlin.model.CreateUserForm
 import pl.makzyt.psskotlin.service.AppUserService
+import pl.makzyt.psskotlin.service.ReportService
 import javax.validation.Valid
 
 @Controller
@@ -17,6 +18,9 @@ import javax.validation.Valid
 class AdminController {
     @Autowired
     lateinit var appUserService: AppUserService
+
+    @Autowired
+    lateinit var reportService: ReportService
 
     @GetMapping("/createuser")
     fun createUser(model: Model): String {
@@ -31,6 +35,13 @@ class AdminController {
             appUserService.create(form)
         }
 
-        return "createuser"
+        return "signupform"
+    }
+
+    @GetMapping("/reports")
+    fun reports(model: Model): String {
+        model.addAttribute("reportList", reportService.findAll())
+
+        return "reportlist"
     }
 }

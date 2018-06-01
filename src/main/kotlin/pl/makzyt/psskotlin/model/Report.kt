@@ -1,11 +1,19 @@
 package pl.makzyt.psskotlin.model
 
 import java.util.*
+import javax.persistence.*
 
+@Entity
+@Table(name = "report")
 class Report {
-    var author: String = ""
-    var companyName: String = ""
-    var creationDate: Date = Date()
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id: Long = -1
+
+    @ManyToOne
+    var author: AppUser? = null
+
+    val creationDate: Date = Date()
 
     var depDate: String = ""
     var retDate: String = ""

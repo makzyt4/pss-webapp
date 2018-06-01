@@ -6,7 +6,7 @@ import javax.persistence.*
 @Table(name = "app_user")
 class AppUser {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = -1
     var companyName: String = ""
     var nip: String = ""
