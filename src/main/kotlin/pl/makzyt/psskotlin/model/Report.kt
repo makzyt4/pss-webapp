@@ -7,7 +7,7 @@ import javax.persistence.*
 @Table(name = "report")
 class Report {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     var id: Long = -1
 
     @ManyToOne

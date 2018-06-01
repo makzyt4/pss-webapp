@@ -24,8 +24,8 @@
                     <td th:text="${report.creationDate}"></td>
                     <td>
                         <div class="btn-group">
-                            <a href="#" class="btn btn-primary btn-sm">Podgląd</a>
-                            <a href="#" class="btn btn-danger btn-sm">Usuń</a>
+                            <a th:href="@{~/admin/reports/show/} + ${report.id}" class="btn btn-primary btn-sm">Podgląd</a>
+                            <a th:href="@{~/admin/reports/delete/} + ${report.id}" class="btn btn-danger btn-sm">Usuń</a>
                         </div>
                     </td>
                 </tr>

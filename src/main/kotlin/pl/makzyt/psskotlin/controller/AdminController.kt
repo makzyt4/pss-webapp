@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.validation.BindingResult
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.ModelAttribute
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.*
 import pl.makzyt.psskotlin.model.CreateUserForm
 import pl.makzyt.psskotlin.service.AppUserService
 import pl.makzyt.psskotlin.service.ReportService
@@ -43,5 +40,21 @@ class AdminController {
         model.addAttribute("reportList", reportService.findAll())
 
         return "reportlist"
+    }
+
+    @GetMapping("/reports/show/{id}")
+    fun reportsShow(@PathVariable("id") id: Long, model: Model): String {
+        val report = reportService.findById(id)!!.get()
+        model.addAttribute("result", report)
+
+        return "results"
+    }
+
+    @GetMapping("/reports/delete/{id}")
+    fun reportsDelete(@PathVariable("id") id: Long, model: Model): String {
+        reportService.deleteById(id)
+        model.addAttribute("reportList", reportService.findAll())
+
+        return "redirect:/admin/reports"
     }
 }

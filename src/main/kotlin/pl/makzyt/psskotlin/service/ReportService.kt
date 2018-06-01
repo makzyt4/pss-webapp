@@ -6,6 +6,7 @@ import pl.makzyt.psskotlin.model.Report
 import pl.makzyt.psskotlin.model.TravelResult
 import pl.makzyt.psskotlin.repository.ReportRepository
 import java.security.Principal
+import java.util.*
 
 @Service
 class ReportService {
@@ -15,8 +16,16 @@ class ReportService {
     @Autowired
     lateinit var appUserService: AppUserService
 
+    fun findById(id: Long): Optional<Report>? {
+        return reportRepository.findById(id)
+    }
+
     fun findAll(): MutableList<Report>? {
         return reportRepository.findAll()
+    }
+
+    fun deleteById(id: Long) {
+        reportRepository.deleteById(id)
     }
 
     fun saveFromResult(principal: Principal?, travelResult: TravelResult) {
